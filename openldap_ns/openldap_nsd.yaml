@@ -1,0 +1,22 @@
+nsd-catalog:
+    nsd:
+    -   id: openldap_ns
+        name: openldap_ns
+        short-name: openldap_ns
+        description: NS consisting of a single KNF openldap_knf connected to mgmt network
+        vendor: OSM
+        version: '1.0'
+        logo: osm.png
+        constituent-vnfd:
+        -   member-vnf-index: openldap
+            vnfd-id-ref: openldap_knf
+        vld:
+        -   id: mgmtnet
+            name: mgmtnet
+            type: ELAN
+            mgmt-network: 'true'
+            vim-network-name: mgmt
+            vnfd-connection-point-ref:
+            -   member-vnf-index-ref: openldap
+                vnfd-id-ref: openldap_knf
+                vnfd-connection-point-ref: mgmtnet

@@ -1,0 +1,19 @@
+nsd-catalog:
+    nsd:
+    -   id: test_nok8s_ns
+        name: test_nok8s_ns
+        short-name: test_nok8s_ns
+        constituent-vnfd:
+        -   member-vnf-index: test_nok8s
+            vnfd-id-ref: test_nok8s_knf
+        vld:
+        -   id: mgmtnet
+            name: mgmtnet
+            type: ELAN
+            mgmt-network: 'true'
+            vim-network-name: mgmt
+            vnfd-connection-point-ref:
+            -   member-vnf-index-ref: test_nok8s
+                vnfd-id-ref: test_nok8s_knf
+                vnfd-connection-point-ref: mgmt
+

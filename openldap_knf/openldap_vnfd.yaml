@@ -1,0 +1,20 @@
+vnfd-catalog:
+  schema-version: '3.0'
+  vnfd:
+  - id: openldap_knf
+    name: openldap_knf
+    short-name: openldap_knf
+    description: KNF with single KDU using a helm-chart for openldap version 1.2.1
+    vendor: Telefonica
+    version: '1.0'
+    connection-point:
+    - name: mgmtnet
+    mgmt-interface:
+      cp: mgmt
+    kdu:
+    - name: ldap
+      helm-chart: stable/openldap #:1.2.1
+    k8s-cluster:
+      nets:
+      - id: mgmtnet
+        external-connection-point-ref: mgmt

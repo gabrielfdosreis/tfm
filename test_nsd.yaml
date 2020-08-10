@@ -1,0 +1,18 @@
+nsd-catalog:
+    nsd:
+    -   id: test_ns
+        name: test_ns
+        short-name: test_ns
+        constituent-vnfd:
+        -   member-vnf-index: test
+            vnfd-id-ref: test_knf
+        vld:
+        -   id: mgmtnet
+            name: mgmtnet
+            type: ELAN
+            mgmt-network: 'true'
+            vim-network-name: mgmt
+            vnfd-connection-point-ref:
+            -   member-vnf-index-ref: test
+                vnfd-id-ref: test_knf
+                vnfd-connection-point-ref: mgmtnet

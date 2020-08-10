@@ -1,0 +1,28 @@
+vnfd-catalog:
+  schema-version: '3.0'
+  vnfd:
+  - id: test_nok8s_knf
+    name: test_nok8s_knf
+    short-name: test_nok8s_knf
+    mgmt-interface:
+      cp: mgmt
+    connection-point:
+    - name: mgmt
+      type: VPORT
+    vdu:
+    -   id: ubuntu
+        name: ubuntu
+        description: "Ubuntu Trusty default Docker container"
+        count: "1"
+        vm-flavor:
+            vcpu-count: 1
+            memory-mb: 512
+            storage-gb: 10
+        image: "ubuntu:trusty"
+        interface:
+        -   name: mgmt
+            position: 0
+            type: EXTERNAL
+            virtual-interface:
+                type: VIRTIO
+            external-connection-point-ref: mgmt

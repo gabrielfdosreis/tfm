@@ -1,0 +1,18 @@
+vnfd-catalog:
+  schema-version: '3.0'
+  vnfd:
+  - id: test_knf
+    name: test_knf
+    short-name: test_knf
+    connection-point:
+    - name: mgmtnet
+    mgmt-interface:
+      cp: mgmt
+    kdu:
+    - name: testchart
+      helm-chart: mygitrepo/testchart-0.1.0
+      # helm-chart: testchart-0.1.0
+    k8s-cluster:
+      nets:
+      - id: mgmtnet
+        external-connection-point-ref: mgmt

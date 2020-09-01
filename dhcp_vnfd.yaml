@@ -1,0 +1,17 @@
+vnfd-catalog:
+  schema-version: '3.0'
+  vnfd:
+  - id: dhcp_knf
+    name: dhcp_knf
+    short-name: dhcp_knf
+    connection-point:
+    - name: mgmtnet
+    mgmt-interface:
+      cp: mgmt
+    kdu:
+    - name: dhcp
+      helm-chart: mygitrepo/sdnv/dhcp-server
+    k8s-cluster:
+      nets:
+      - id: mgmtnet
+        external-connection-point-ref: mgmt

@@ -10,7 +10,7 @@ vnfd-catalog:
       cp: mgmt
     kdu:
     - name: dhcp
-      helm-chart: mygitrepo/sdnv/dhcp-server
+      helm-chart: mygitrepo/dhcp-server
     k8s-cluster:
       nets:
       - id: mgmtnet

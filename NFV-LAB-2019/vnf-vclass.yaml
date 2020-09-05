@@ -29,9 +29,9 @@ vnfd-catalog:
     kdu:
       - name: ubuntu
         helm-chart: mygitrepo/vnf-img
-      k8s-cluster:
-        nets:
-        - id: mgmtnet
-          external-connection-point-ref: mgmt
+    k8s-cluster:
+      nets:
+      - id: mgmtnet
+        external-connection-point-ref: mgmt
     vendor: UPM
     version: '0.1'

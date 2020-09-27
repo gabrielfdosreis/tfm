@@ -13,18 +13,18 @@ nsd-catalog:
     version: '1.0'
     vld:
     - description: DATA VL
-      id: data_vl
+      id: mgmtnet
       mgmt-network: 'true'
-      name: data_vl
-      short-name: data_vl
+      name: mgmtnet
+      short-name: mgmtnet
       type: ELAN
       vendor: Universidad Politecnica de Madrid
       version: '0.1'
-      vim-network-name: default
+      vim-network-name: mgmt
       vnfd-connection-point-ref:
       - member-vnf-index-ref: '1'
-        vnfd-connection-point-ref: eth1
+        vnfd-connection-point-ref: mgmtnet
         vnfd-id-ref: vclass
       - member-vnf-index-ref: '2'
-        vnfd-connection-point-ref: eth1
+        vnfd-connection-point-ref: mgmtnet
         vnfd-id-ref: vcpe

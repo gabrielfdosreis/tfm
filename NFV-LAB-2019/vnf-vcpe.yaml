@@ -1,31 +1,14 @@
 vnfd-catalog:
   vnfd:
   - connection-point:
-    - name: eth1
-      type: VPORT
+    - name: mgmtnet
+      # type: VPORT
     description: Router-VNF
     id: vcpe
     mgmt-interface:
-      cp: eth1
+      cp: mgmt
     name: vcpe
     short-name: vcpe
-    # vdu:
-    # - count: '1'
-    #   description: vcpe Docker container
-    #   id: ubuntu
-    #   image: vnf-img
-    #   interface:
-    #   - external-connection-point-ref: eth1
-    #     name: eth1
-    #     position: 0
-    #     type: EXTERNAL
-    #     virtual-interface:
-    #       type: VIRTIO
-    #   name: ubuntu
-    #   vm-flavor:
-    #     memory-mb: 512
-    #     storage-gb: 10
-    #     vcpu-count: 1
     kdu:
       - name: ubuntu
         helm-chart: mygitrepo/vnf-img

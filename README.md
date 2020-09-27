@@ -138,11 +138,22 @@ Añadir el repositoiro al cliente Helm (**indicando la URL de GitHub Pages**):
 helm repo add myhelmrepo https://user.github.io/helm-chart-repo
 ```
 
+**!!!!ERRROR APIVERSION**
+**Service accounts???**
+Detail: Deploying at VIM: Error at VIM network 'nsd-vld-id=mgmtnet':
+    Invalid URL or credentials: Unable to establish connection to http://10.0.1.45:6001/v2.0/tokens:
+    HTTPConnectionPool(host='10.0.1.45', port=6001): Max retries exceeded with url: /v2.0/tokens
+    (Caused by NewConnectionError(': Failed to establish a new connection: [Errno 113] No route to host',))
+--> comprobar vimemu
+  
+osm nfpkg-create NFV-LAB-2019/vnf-vclass.yaml && osm nfpkg-create NFV-LAB-2019/vnf-vcpe.yaml && osm nspkg-create NFV-LAB-2019/ns-vcpe.yaml && osm ns-create --ns_name vcpe-1 --nsd_name vCPE --vim_account emu-vim1  
+
 # B. Debug: despliegue local del chart para comprobar el funcionamiento
 Con estos comandos podemos desplegar el Helm Chart en el Helm local sobre un Kubernetes para comprobar que está definido correctamente y que funciona sin problemas:
 ```
 export KUBECONFIG=/home/gabriel/osm/kubeconfig.yaml
 helm install nginx/ --values nginx/values.yaml -n nginx-0.1.0
+helm install name repo/chart
 export NODE_IP=$(kubectl get nodes --namespace default -o jsonpath="{.items[0].status.addresses[0].address}")
 export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services nginx-0.1.0)
 echo http://$NODE_IP:$NODE_PORT

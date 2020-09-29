@@ -11,7 +11,7 @@ vnfd-catalog:
     short-name: vcpe
     kdu:
       - name: ubuntu
-        helm-chart: mygitrepo/vnf-img
+        helm-chart: mygitrepo/vcpe
     k8s-cluster:
       nets:
       - id: mgmtnet

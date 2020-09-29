@@ -11,7 +11,7 @@ vnfd-catalog:
     short-name: vclass
     kdu:
       - name: ubuntu
-        helm-chart: mygitrepo/vnf-img
+        helm-chart: mygitrepo/vclass
     k8s-cluster:
       nets:
       - id: mgmtnet
